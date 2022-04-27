@@ -13,8 +13,8 @@ import {
 import { Icon } from 'native-base';
 import {SearchBar} from 'react-native-elements';
 import CustomHeader from '../components/CustomHeader';
-import * as firebase from 'react-native-firebase';
-import firestore from '@react-native-firebase/firestore';
+//import firebase from 'firebase/compat/app';
+import {firebase} from '@firebase/app';
 
 
 

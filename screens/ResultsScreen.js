@@ -1,7 +1,6 @@
 //IMPORTS
 import React from 'react';
 import {
-  Image,
   Platform,
   ScrollView,
   StyleSheet,
@@ -9,15 +8,14 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { WebBrowser } from 'expo';
-import { ListItem } from 'react-native-elements'
 import Match from '../components/Match';
 import CustomHeader from '../components/CustomHeader';
 import {ActivityIndicator, SafeAreaView, Button} from "react-native" // SafeAreaView --> USEFUL FOR IPhone X and new phones designs !
-import { MonoText } from '../components/StyledText';
-import * as firebase from 'firebase'
-import 'firebase/firestore';
-import { connect } from 'react-redux'
+//import * as firebase from 'firebase/compat/app';
+//import 'firebase/compat/firestore';
+import {firebase} from '@firebase/app';
+import '@firebase/firestore';
+
 
 // CONSTANTS :
 
