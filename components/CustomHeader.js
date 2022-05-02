@@ -2,9 +2,8 @@
 
 import React from 'react';
 import {Image} from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title} from 'native-base';
-import {TouchableOpacity} from "react-native"
-import {StatusBar} from 'react-native';
+import { Container, Header, Left, Body, Right, Button, Icon, Title, NativeBaseProvider} from 'native-base';
+import {TouchableOpacity} from "react-native";
 
 import icon from '../assets/images/icon.png';
 
@@ -24,8 +23,10 @@ class CustomHeader extends React.Component {
     //console.log(this.props.navigation)
     return (
 
+        <NativeBaseProvider>
+
         <Container>
-            {/*<View style={{height: Constants.statusBarHeight}} />*/}
+
             <Header style={{ height: 60, backgroundColor:'#549E5E'}} androidStatusBarColor='#549E5E' >
                 <Left>
                     {
@@ -52,6 +53,8 @@ class CustomHeader extends React.Component {
 
             </Header>
         </Container>
+
+        </NativeBaseProvider>
     );
   }
 }

@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import {Text} from 'react-native';
 
@@ -30,3 +31,4 @@ class DatabaseComponent extends React.Component {
 }
 
 export default DatabaseComponent;
+*/

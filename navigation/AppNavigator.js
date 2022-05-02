@@ -2,6 +2,7 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import { FontAwesome } from '@expo/vector-icons';
+import {NavigationContainer} from '@react-navigation/native';
 
 // Custom Components :
 /* 
@@ -49,7 +50,7 @@ function TabNavigator() {
         })
         }
       >
-        <Tab.screen name="Program" component={ProgramStack} />
+        <Tab.Screen name="Program" component={ProgramStack} />
         <Tab.Screen name="Results" component={ResultsStack} />
         <Tab.Screen name="Map" component={MapStack} />
       </Tab.Navigator>

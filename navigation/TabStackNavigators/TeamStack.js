@@ -8,12 +8,10 @@ const Stack = createNativeStackNavigator();
 
 function TeamStack() {
     return (
-      <NavigationContainer>
         <Stack.Navigator>
                 <Stack.Screen name="TeamHome" component={TeamScreen} />
                 <Stack.Screen name="PdfScreen" component={PdfScreen} />
         </Stack.Navigator>
-      </NavigationContainer>
     )
 }
 

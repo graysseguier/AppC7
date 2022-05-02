@@ -6,11 +6,9 @@ const Stack = createNativeStackNavigator();
 
 function SatisfactionStack() {
     return (
-      <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Satisfaction" component={SatisfactionScreen} headerShown={false} />
         </Stack.Navigator>
-      </NavigationContainer>
     )
 }
 

@@ -6,11 +6,9 @@ const Stack = createNativeStackNavigator();
 
 function ResultsStack() {
     return (
-      <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Results" component={ResultsScreen} headerShown={false} />
         </Stack.Navigator>
-      </NavigationContainer>
     )
 }
 /*

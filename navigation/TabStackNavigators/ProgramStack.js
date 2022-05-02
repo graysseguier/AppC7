@@ -9,12 +9,10 @@ const Stack = createNativeStackNavigator();
 
 function ProgramStack() {
     return (
-      <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Program1" component={ProgramScreen} headerShown={false} />
           <Stack.Screen name="Program2" component={Program2} headerShown={false} />
         </Stack.Navigator>
-      </NavigationContainer>
     )
 }
 

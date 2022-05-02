@@ -8,11 +8,9 @@ const Stack = createNativeStackNavigator();
 
 function TestStack() {
     return (
-      <NavigationContainer>
         <Stack.Navigator>
                 <Stack.Screen name="Test" component={TestScreen} headerShown={false} />
         </Stack.Navigator>
-      </NavigationContainer>
     )
 }
 
