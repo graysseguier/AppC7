@@ -1,11 +1,9 @@
 //IMPORTS :
 
 import React from 'react';
-import {Image} from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title, NativeBaseProvider} from 'native-base';
-import {TouchableOpacity} from "react-native";
+import {Image, TouchableOpacity, Button, View} from 'react-native';
+import { Container, Header, Left, Body, Right, Icon, Title, NativeBaseProvider} from 'native-base';
 
-import icon from '../assets/images/icon.png';
 
 //COMPONENTS :
 
@@ -28,17 +26,18 @@ class CustomHeader extends React.Component {
         <Container>
 
             <Header style={{ height: 60, backgroundColor:'#549E5E'}} androidStatusBarColor='#549E5E' >
+                <View>
                 <Left>
-                    {
-                        this.props.isHome?
-                        <Button transparent onPress={()=> this.props.navigation.openDrawer()}>
+                        
+                        <Button title='B1' onPress={()=> this.props.navigation.openDrawer()}>
                             <Icon name='menu' />
                         </Button>:
-                        <Button transparent onPress={()=> this.props.navigation.goBack()}>
+                        <Button title='B2' onPress={()=> this.props.navigation.goBack()}>
                             <Icon name='arrow-back' />
                         </Button>
-                    }
+                    
                 </Left>
+                </View>
 
                 <Body>
                     <Title>{this.props.title}</Title>
@@ -47,7 +46,7 @@ class CustomHeader extends React.Component {
 
                 <Right>
                     
-                    <Image source={icon} style={{height:40, width:40, resizeMode: 'contain', tintColor: 'white'}} />
+                    <Image source={require('../assets/images/icon.png')} style={{height:40, width:40, resizeMode: 'contain', tintColor: 'white'}} />
                 </Right>
                 </TouchableOpacity>
 

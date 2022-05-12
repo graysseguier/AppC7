@@ -10,7 +10,7 @@ function GoToButton({ screenName }) {
   const navigation = useNavigation();
   return (
     <Button
-      title="Go to ${P2}"
+      title="Go to P2"
       onPress={() => navigation.navigate(Program2)}
     />
   );

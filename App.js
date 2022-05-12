@@ -12,10 +12,9 @@ import { Ionicons } from '@expo/vector-icons';
 import AppNavigator from './navigation/AppNavigator';
 
 //import firebase from 'firebase/compat/app';
-import { firebase } from '@firebase/app';
 //import 'firebase/compat/firestore';
 import '@firebase/firestore'
-import { initializeApp } from '@firebase/app';
+import { initializeApp } from 'firebase/app';
 
 //Rajouter les liaisons avec la base de donnée
 
@@ -29,7 +28,7 @@ const firebaseConfig = {
   measurementId: "G-LX3XVQDDDH"
 };
 
-let app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 /*
   if (!firebase.apps.length) {
     app = initializeApp(firebaseConfig);
@@ -72,8 +71,8 @@ class App extends React.Component{
 
       Font.loadAsync({
         // This is the font that we are using for our tab bar
-        Roboto: require('./Roboto/Roboto-Black.ttf'),
-        Roboto_medium: require('./Roboto/Roboto-Medium.ttf'),
+        Roboto: require('./assets/fonts/Roboto/Roboto-Black.ttf'),
+        Roboto_medium: require('./assets/fonts/Roboto/Roboto-Medium.ttf'),
         ...Ionicons.font,
       }),
     ]);
