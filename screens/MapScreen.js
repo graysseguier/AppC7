@@ -979,11 +979,9 @@ class MapScreen extends React.Component {
     return(
       <Container style={{flex:1}}>
 
-        <View style={{flex:1}}>
-          <CustomHeader title="Map" isHome={true} navigation={this.props.navigation} />
-        </View>
 
-        <View style={{flex:10}}>
+
+        <View style={{flex:1}}>
 
           <View style={{height:35, width:width, flexDirection:'row', backgroundColor:'white', zIndex:1, opacity:0.8}}>
 

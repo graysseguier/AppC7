@@ -208,11 +208,7 @@ class StaffScreen extends React.Component {
     return (
       <View style={{flex:1}}>
         
-        <View style={{flex:1}}>
-          <CustomHeader title="Espace Staffeurs" isHome={true} navigation={this.props.navigation}/>
-        </View>
 
-        <View style={{flex:10}} >
 
           <SearchBar
             placeholder='Rechercher'
@@ -229,7 +225,6 @@ class StaffScreen extends React.Component {
           {this.displayStaffeurs()}
           </ScrollView>
 
-        </View>
       </View>
       
     );

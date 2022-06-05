@@ -12,15 +12,10 @@ class Program2 extends React.Component {
     return (
       <View style={{flex:1}}>
 
-        <View style={{flex:1}}>
-          <CustomHeader title="Program sub screen" isHome={false} navigation={this.props.navigation} />
-        </View>
 
-        <View style={{flex:10}}>
           <Text>
             SUB LAYER !!
           </Text>  
-        </View>
 
       </View>
     );

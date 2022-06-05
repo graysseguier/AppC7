@@ -14,11 +14,7 @@ class PartnersScreen extends React.Component {
   render() {
     return(
       <View style={{flex:1}}>
-            <View style={{flex:1}}>
-                <CustomHeader title="Partners" isHome={true} navigation={this.props.navigation} />
-            </View>
         
-            <View style={{flex:11}}>
                 <ScrollView style={{}}>
                     <TouchableOpacity activeOpacity={0.8} onPress={()=>{Linking.openURL('https://www.hsbc.com/')}} style={{flex:1, resizeMode: 'cover', width:width, height:width*1088/1636, borderBottomWidth:2, borderColor:'#E9EAEB',marginBottom:15}}>
                         <Image style={{height:null,width:null,flex:1}} source={require('../assets/images/hsbc.png')}/>
@@ -32,7 +28,6 @@ class PartnersScreen extends React.Component {
                         <Image style={{height:null,width:null,flex:1}} source={require('../assets/images/antalis.png')}/>
                     </TouchableOpacity>                                   
                 </ScrollView>
-            </View>
       </View>
     )
   }

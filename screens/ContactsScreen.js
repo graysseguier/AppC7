@@ -1,7 +1,6 @@
 // IMPORTS :
 import React from 'react';
 import { Text, View,TouchableOpacity,Dimensions,Image,ScrollView,Linking,Animated} from 'react-native';
-import {Container} from 'native-base';
 import CustomHeader from '../components/CustomHeader' ;
 import Clipboard from '@react-native-clipboard/clipboard';
 
@@ -50,12 +49,9 @@ class ContactsScreen extends React.Component {
 
   render() {
     return(
-      <Container>
+      <View>
 
         <View style={{flex:1}}>
-          <CustomHeader title="Contacts" isHome={true} navigation={this.props.navigation}/>
-        </View>
-        <View style={{flex:11}}>
             <ScrollView style={{marginTop:10}}>
             <TouchableOpacity onPress={()=>{ this.pressNumero('06 13 88 90 67')}} style={{width:width,height:0.27*width,marginBottom:15}}>
                         <Image style={{height:null,width:null,flex:1}} source={require('../assets/images/ImagesContacts/1.png')}/>
@@ -107,7 +103,7 @@ class ContactsScreen extends React.Component {
             <Text style={{fontWeight:'bold',fontSize:18}}>Numéro copié</Text>
         </Animated.View>
 
-      </Container>
+        </View>
     )
   }
 }

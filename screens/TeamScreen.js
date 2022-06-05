@@ -253,10 +253,6 @@ class TeamScreen extends React.Component {
       
       <View style={{flex:1}}>
           
-        <View style={{flex:1}}>
-          <CustomHeader title="Teams" isHome={true} navigation={this.props.navigation} />
-          
-        </View>
 
         <View style={{flex:1, flexDirection:'row',height:50, margin : 5}}>
           <View style={{flex:1}}>

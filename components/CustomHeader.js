@@ -1,7 +1,7 @@
 //IMPORTS :
 
 import React from 'react';
-import {Image, TouchableOpacity, Button, View} from 'react-native';
+import {Image, TouchableOpacity, Button} from 'react-native';
 import { Container, Header, Left, Body, Right, Icon, Title, NativeBaseProvider} from 'native-base';
 
 
@@ -26,7 +26,6 @@ class CustomHeader extends React.Component {
         <Container>
 
             <Header style={{ height: 60, backgroundColor:'#549E5E'}} androidStatusBarColor='#549E5E' >
-                <View>
                 <Left>
                         
                         <Button title='B1' onPress={()=> this.props.navigation.openDrawer()}>
@@ -37,7 +36,6 @@ class CustomHeader extends React.Component {
                         </Button>
                     
                 </Left>
-                </View>
 
                 <Body>
                     <Title>{this.props.title}</Title>

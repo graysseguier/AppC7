@@ -241,9 +241,6 @@ class ResultsScreen extends React.Component {
     return (
 
       <View style={{flex:1}}>
-        <View style={{flex:1}}>
-          <CustomHeader title="Match Results" isHome={true} navigation={this.props.navigation} />
-        </View>
         <View style={{flex:1, flexDirection:'row',height:50, margin : 5}}>
           <View style={{flex:1}}>
           <TouchableOpacity onPress={()=>this.changeMasculin1()} style={this.styleBox('masculin')}>
@@ -268,10 +265,6 @@ class ResultsScreen extends React.Component {
     else {
       return(
       <View style={{flex:1}}>
-        <View style={{flex:1}}>
-          <CustomHeader title="Match Results" isHome={true} navigation={this.props.navigation} />
-
-        </View>
         <View style={{flex:1, flexDirection:'row',height:50, margin : 5}}>
           <View style={{flex:1}}>
           <TouchableOpacity onPress={()=>this.changeMasculin1()} style={this.styleBox('masculin')}>
