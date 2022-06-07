@@ -1,8 +1,6 @@
 //IMPORTS
 import React from 'react';
-import {View, Text} from 'native-base';
-
-import CustomHeader from '../components/CustomHeader';
+import {View, Text} from 'react-native';
 
 
 //COMPONENT :

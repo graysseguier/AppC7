@@ -1,7 +1,8 @@
 //IMPORTS :
 
 import React from 'react';
-import {SafeAreaView, ScrollView, View, Text, Image} from 'react-native';
+import { ScrollView, View, Text, Image} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import centrale7 from '../assets/images/centrale-7.png';
 
 import {DrawerItemList} from '@react-navigation/drawer';

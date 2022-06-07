@@ -41,7 +41,7 @@ function TabNavigator() {
               return(
                 <FontAwesome name="trophy" size={30} color={color} />
               );
-            } else if (route.name === 'Map') {
+            } else if (route.name === 'Maps') {
               return(
                 <FontAwesome name="map" size={30} color={color} />
               );
@@ -52,7 +52,7 @@ function TabNavigator() {
       >
         <Tab.Screen name="Program" component={ProgramStack} />
         <Tab.Screen name="Results" component={ResultsStack} />
-        <Tab.Screen name="Map" component={MapStack} />
+        <Tab.Screen name="Maps" component={MapStack} />
       </Tab.Navigator>
   )
 }

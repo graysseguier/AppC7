@@ -1,15 +1,12 @@
 // IMPORTS
 import React from 'react';
 import { Text, View,TouchableOpacity, Dimensions,Animated,Keyboard,Image,Platform} from 'react-native';
-import {Container,Tabs,Tab} from 'native-base';
 //import { MapView } from 'expo';
 import MapView, { Marker } from 'react-native-maps';
 import {SearchBar} from 'react-native-elements';
 import { FlatList } from 'react-native-gesture-handler';
 //import BarreMenu from '../../../Navigation/BarreMenu';
 //import * as Permissions from 'expo-permissions';
-
-import CustomHeader from '../components/CustomHeader';
 
 // CONSTANTS :
 
@@ -633,6 +630,7 @@ var listeActivites=[
 
 const campusGifRegion={latitude:48.709743,longitude:2.162944,latitudeDelta:0.012,longitudeDelta:0.012}
 const campusOrsayRegion={latitude:48.699260,longitude: 2.180779,latitudeDelta:0.012,longitudeDelta:0.012}
+const campusXRegion={latitude:48.71425106550509, longitude:2.211216596361259,latitudeDelta:0.012,longitudeDelta:0.012}
 
 const {width,height}=Dimensions.get('window')
 
@@ -667,7 +665,8 @@ class MapScreen extends React.Component {
       this.state.topPosition,
       {
           toValue: height*0.777,
-          duration:300
+          duration:300,
+          useNativeDriver: false
       }
     ).start();
   }
@@ -703,7 +702,8 @@ class MapScreen extends React.Component {
       this.state.topPosition,
       {
           toValue:height-450,
-          duration:300
+          duration:300,
+          useNativeDriver: false
       }
     ).start();
   }
@@ -977,7 +977,6 @@ class MapScreen extends React.Component {
     var hauteur= 0.091/(this.state.region.latitudeDelta);
     
     return(
-      <Container style={{flex:1}}>
 
 
 
@@ -1014,7 +1013,7 @@ class MapScreen extends React.Component {
             showsUserLocation
             showsCompass={true}
             customMapStyle={mapStyle3}
-            provider={PROVIDER_GOOGLE}
+            provider={undefined}
             style={{ flex: 1}}
             initialRegion={campusGifRegion}
             showsMyLocationButton
@@ -1057,18 +1056,7 @@ class MapScreen extends React.Component {
             containerStyle={{backgroundColor: '#e5e5e5'}}
           />
 
-          <Tabs            
-            tabContainerStyle = {{ height: 40}}
-            tabBarUnderlineStyle = {{backgroundColor: this.colorTab(),height: 2}}
-          >
-
-            <Tab
-            heading = "Player Services" 
-            textStyle = {{fontSize:13,fontWeight:'bold',color:this.colorTab(),opacity:0.75}}
-            activeTextStyle = {{fontSize:13,fontWeight:'bold',color:this.colorTab()}}
-            tabStyle = {{backgroundColor:'white'}}
-            activeTabStyle = {{backgroundColor:'white'}}
-            >
+            <View>
               {
                 this.state.listeRechercheServices.length === 0 ?
                 <View style={{flex:1,alignItems:'center'}}>
@@ -1098,44 +1086,13 @@ class MapScreen extends React.Component {
                   }}
                 />
               }
-            </Tab>
+            </View>
 
-            <Tab heading="Public Activities" 
-            textStyle={{fontSize:13,fontWeight:'bold',color:this.colorTab(),opacity:0.75}}
-            activeTextStyle={{fontSize:13,fontWeight:'bold',color:this.colorTab()}}
-            tabStyle={{backgroundColor:'white'}}
-            activeTabStyle={{backgroundColor:'white'}}
-            >
-              {this.state.listeRechercheActivites.length===0?
-              <View style={{flex:1,alignItems:'center'}}><Text style={{color:'grey',marginTop:20}}>Aucune suggestion trouvée</Text></View>:
-              <FlatList
-                onScroll={()=>Keyboard.dismiss()}
-                keyboardShouldPersistTaps="handled"
-                data={this.state.listeRechercheActivites}
-                keyExtractor={(item)=> item.id.toString()}
-                renderItem={({item})=>{
-                  return(
-                    <TouchableOpacity onPress={()=>this.clickSport(item.region,item.nom,item.lieu,item.id,item.campus,item.imageName)} style={{height:70,width:width,borderTopWidth:1,borderColor:'#e4e4e4',flexDirection:'row'}}>
-                      <View style={{flex:1.5,justifyContent:'center',alignItems:'center'}}>
-                          
-                              <Image style={{height:30,width:30,resizeMode:'contain'}} source={this.urlImage(item.imageName)}/>
-                          
-                      </View>
-                      <View style={{flex:10,flexDirection:'column',marginLeft:10,justifyContent:'center'}}>
-                          <Text style={{fontWeight:'bold',fontSize:19}}>{item.nom}</Text>
-                          <Text style={{color:'grey',fontSize:16}}>{item.description}</Text>
-                      </View>
-                    </TouchableOpacity>
-                )
-                }}
-              />}
-            </Tab>
+            
 
-          </Tabs>
         </Animated.View>
         </View>
           
-      </Container>
     )
   }
 

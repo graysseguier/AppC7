@@ -10,7 +10,7 @@ function ContactsStack() {
     return (
       <Stack.Navigator>
           <Stack.Screen 
-            name="Contacts" 
+            name="Emergency Contacts" 
             component={ContactsScreen} 
             headerShown={true}
             options={{

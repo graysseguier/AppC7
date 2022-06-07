@@ -1,8 +1,5 @@
-/*
-
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
-import { initializeApp } from 'firebase/compat/app';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore'
 
 //Rajouter les liaisons avec la base de donnée
 
@@ -16,11 +13,5 @@ const firebaseConfig = {
   measurementId: "G-LX3XVQDDDH"
 };
 
-let app = initializeApp(firebaseConfig);
-/*
-  if (!firebase.apps.length) {
-    app = initializeApp(firebaseConfig);
- }else {
-    app = firebase.app(); // if already initialized, use that one
- }
-*/
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);

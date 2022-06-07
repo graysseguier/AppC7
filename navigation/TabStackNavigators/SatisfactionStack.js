@@ -10,7 +10,7 @@ function SatisfactionStack() {
     return (
         <Stack.Navigator>
           <Stack.Screen 
-            name="Satisfaction" 
+            name="Satisfaction Form" 
             component={SatisfactionScreen} 
             headerShown={true}
             options={{
