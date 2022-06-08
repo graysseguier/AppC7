@@ -1,8 +1,6 @@
 //IMPORTS
 import React from 'react';
-import {Text, View} from 'native-base';
-
-import CustomHeader from '../components/CustomHeader';
+import {Text, View} from 'react-native';
 
 //COMPONENTS
 class InfosScreen extends React.Component {
