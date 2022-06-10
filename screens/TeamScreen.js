@@ -2,7 +2,7 @@
 import React from 'react';
 import { Platform, ScrollView, StyleSheet, Text, View, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { firebase } from 'firebase/app';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, collection } from 'firebase/firestore';
 //import firebase from 'firebase/compat/app';
 import AffichageEquipe from "../components/AffichageEquipe";
 
@@ -35,7 +35,7 @@ class TeamScreen extends React.Component {
   _displayLoading() {
     if (this.state.loading) {
       return (
-        <View style={styles.loading_container}>
+        <View style={styles.container}>
           <ActivityIndicator size='large' />
         </View>
       )
@@ -43,61 +43,68 @@ class TeamScreen extends React.Component {
   }
 
   // Chargement des données
-  componentDidMount() {
-    this._loadDataF()
-    this._loadDataH()
-    this.setState({
-      loading: true
-    })
-  }
+  //componentDidMount() {
+  //  this._loadDataF()
+  //  this._loadDataH()
+  //  this.setState({
+  //    loading: true
+  //  })
+  //}
 
 
-  _loadDataF() {
-    this.setState({ donneesF: [] }, () => {
-      var that = this
-
-      var docRef = db.collection("Equipes").doc("Femmes").collection("Femmes")
-      docRef.get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
-          var match = doc.data()
-          that.setState({ donneesF: that.state.donneesF.concat(match) })
-
-
-        });
-      })
-        .then(() => this.loadTeamsF())
-        .catch(function (error) {
-          console.log("Error getting document:", error);
-        })
-        .then(() => this.setState({ loading: false }))
-
-    }
-    )
-  }
-  _loadDataH() {
-    this.setState({ donneesH: [] }, () => {
-      var that = this
-
-      var docRef = db.collection("Equipes").doc("Hommes").collection("Hommes")
-      docRef.get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
-          var match = doc.data()
-          that.setState({ donneesH: that.state.donneesH.concat(match) })
+  //_loadDataF() {
+  //  this.setState({ donneesF: [] }, () => {
+  //    var that = this
+  //    var equipes = collection(db, "Equipes")
+  //    var femmes_doc = doc(equipes, "Femmes")
+  //    var femmes_col = collection(femmes_doc, "Femmes")
+  //    femmes_col.get().then(function (querySnapshot) {
+  //      querySnapshot.forEach(function (doc) {
+  //        var match = doc.data()
+  //        that.setState({ donneesF: that.state.donneesF.concat(match) })
 
 
-        });
-      })
-        .then(() => this.loadTeamsH())
-        .catch(function (error) {
-          console.log("Error getting document:", error);
-        })
-        .then(() => this.setState({ loading: false }))
+  //      });
+  //    })
+  //      .then(() => this.loadTeamsF())
+  //      .catch(function (error) {
+  //        console.log("Error getting document:", error);
+  //      })
+  //      .then(() => this.setState({ loading: false }))
 
-    }
-    )
-  }
+  //  }
+  //  )
+  //}
+  //_loadDataH() {
+  //  this.setState({ donneesH: [] }, () => {
+  //  var that = this
+  //  var equipes = collection(db, "Equipes")
+  //  var hommes_doc = doc(equipes, "Hommes")
+  //  var hommes_col = collection(hommes_doc, "Hommes")
+  //  hommes_col.get().then(function (querySnapshot) {
+  //    querySnapshot.forEach(function (doc) {
+  //      var match = doc.data()
+  //      that.setState({ donneesH: that.state.donneesH.concat(match) })
+
+
+  //});
+  //})
+  //  .then(() => this.loadTeamsH())
+  //  .catch(function (error) {
+  //    console.log("Error getting document:", error);
+  //  })
+  // .then(() => this.setState({ loading: false }))
+
+  //    }
+  //    )
+  //  }
 
   loadTeamsF() {
+    this.setState({
+      donneesF: [{ Name: 'Tuks', texte: 'Afrique du sud' }, {
+        Name: 'Leman Flames', texte: 'Suisse'
+      }]
+    })
 
     var listeTeamsF = this.state.donneesF
     longueur = listeTeamsF.length
@@ -109,7 +116,7 @@ class TeamScreen extends React.Component {
 
       var team = listeTeamsF[i]
       var teamName = { name: team.Name }
-      var image = { image: team.image }
+      //var image = { image: team.image }
       var texte = { texte: team.texte }
       teamsF.push({ teamName, image, texte })
 
@@ -118,6 +125,11 @@ class TeamScreen extends React.Component {
     this.setState({ teamsF: teamsF })
   }
   loadTeamsH() {
+    this.setState({
+      donneesH: [{ Name: 'Seventise', texte: 'France' }, {
+        Name: 'Euskadi', texte: 'Pays Basque'
+      }]
+    })
 
     var listeTeamsH = this.state.donneesH
     longueur = listeTeamsH.length
@@ -129,7 +141,7 @@ class TeamScreen extends React.Component {
 
       var team = listeTeamsH[i]
       var teamName = { name: team.Name }
-      var image = { image: team.image }
+      //var image = { image: team.image }
       var texte = { texte: team.texte }
 
       teamsH.push({ teamName, image, texte })
