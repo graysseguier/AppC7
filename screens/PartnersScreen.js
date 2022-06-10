@@ -3,7 +3,6 @@
 import React from 'react';
 import {View,TouchableOpacity,Dimensions,Image,ScrollView,Linking, Text} from 'react-native';
 
-import CustomHeader from '../components/CustomHeader';
 
 //CONSTANTS :
 const {width, height} = Dimensions.get('window');

@@ -9,7 +9,6 @@ import {
   View,
 } from 'react-native';
 import Match from '../components/Match';
-import CustomHeader from '../components/CustomHeader';
 import {ActivityIndicator, Button} from "react-native" // SafeAreaView --> USEFUL FOR IPhone X and new phones designs !
 //import * as firebase from 'firebase/compat/app';
 //import 'firebase/compat/firestore';

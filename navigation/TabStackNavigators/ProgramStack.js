@@ -14,38 +14,14 @@ function ProgramStack() {
           <Stack.Screen 
             name="Program1" 
             component={ProgramScreen} 
-            headerShown={true}
-            options={{
-              headerTitle: "Program",
-              headerTitleAlign: 'center',
-              headerLeft: (props) => {
-                return (
-                  <>
-                    <Text>Menu</Text>
-                    {props.canGoBack && <HeaderBackButton {...props} />}
-                  </>
-                );
-              },
-              headerRight: () => {
-                <Image source={require('../../assets/icon.png')} style={{height:40, width:40, resizeMode: 'contain', tintColor: 'white'}} />
-              }
-              
-            }}  />
+            options={{headerShown: false}}
+            />
           <Stack.Screen 
             name="Program2" 
-            component={Program2} 
-            headerShown={true}
+            component={Program2}
             options={{
-              headerTitle: "Program sub screen",
+              title: "Program sub screen",
               headerTitleAlign: 'center',
-              headerLeft: (props) => {
-                return (
-                  <>
-                    <Text>Menu</Text>
-                    {props.canGoBack && <HeaderBackButton {...props} />}
-                  </>
-                );
-              },
               headerRight: () => {
                 <Image source={require('../../assets/images/icon.png')} style={{height:40, width:40, resizeMode: 'contain', tintColor: 'white'}} />
               }

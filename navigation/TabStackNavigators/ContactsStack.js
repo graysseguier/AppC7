@@ -11,23 +11,9 @@ function ContactsStack() {
       <Stack.Navigator>
           <Stack.Screen 
             name="Emergency Contacts" 
-            component={ContactsScreen} 
-            headerShown={true}
+            component={ContactsScreen}
             options={{
-              headerTitle: "Contacts",
-              headerTitleAlign: 'center',
-              headerLeft: (props) => {
-                return (
-                  <>
-                    <Text>Menu</Text>
-                    {props.canGoBack && <HeaderBackButton {...props} />}
-                  </>
-                );
-              },
-              headerRight: () => {
-                <Image source={require('../../assets/icon.png')} style={{height:40, width:40, resizeMode: 'contain', tintColor: 'white'}} />
-              }
-              
+              headerShown: false
             }}  
           />
       </Stack.Navigator>

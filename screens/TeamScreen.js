@@ -2,10 +2,8 @@
 import React from 'react';
 import { Platform, ScrollView, StyleSheet, Text, View, TouchableOpacity, ActivityIndicator} from 'react-native';
 import {firebase} from '@firebase/app';
-//import firebase from 'firebase/compat/app';
 import AffichageEquipe from "../components/AffichageEquipe";
 
-import CustomHeader from '../components/CustomHeader';
 
 // CONSTANTS :
 

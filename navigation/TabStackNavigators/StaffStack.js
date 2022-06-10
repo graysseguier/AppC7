@@ -30,7 +30,7 @@ function StaffStack() {
                     }
                     
                   }}  />
-                <StaffScreen.Screen 
+                <Stack.Screen 
                   name ="PdfScreen" 
                   component={PdfScreen} 
                   headerShown={true}

@@ -1,6 +1,6 @@
 // IMPORTS
 import React from 'react';
-import { Text, View,TouchableOpacity, Dimensions,Animated,Keyboard,Platform} from 'react-native';
+import { Text, View,TouchableOpacity, Dimensions,Animated,Keyboard} from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import {Markers} from '../assets/data/Markers';
 
@@ -23,7 +23,7 @@ class MapScreen extends React.Component {
     this.state={
       topPosition: new Animated.Value(height-450),
       recherche:'',
-      listeMarkers:[],
+      listeMarkers:Markers['CS'],
       campus:'CS',
       region: campusGifRegion
     };

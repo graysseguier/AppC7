@@ -2,7 +2,6 @@
 import React from 'react';
 import {WebView} from 'react-native-webview';
 import {View} from 'react-native';
-import CustomHeader from '../components/CustomHeader';
 
 //COMPONENTS
 class PdfScreen extends React.Component {
